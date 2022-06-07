@@ -15,8 +15,8 @@ class Program
         await Host.CreateDefaultBuilder()
             .UseNServiceBusBridge((ctx, bridgeConfiguration) =>
             {
-                var sqsBridgeEndpoint = new BridgeEndpoint("Samples.Sqs.SimpleReceiver");
-                var sqsBridgeTransport = new BridgeTransport(new SqsTransport());
+                var sqsBridgeEndpoint = new BridgeEndpoint("Samples.Sqs.Sender");
+                var sqsBridgeTransport = new BridgeTransport(new SqsTransport(CreateSqsClient(), CreateSnsClient()));
                 sqsBridgeTransport.AutoCreateQueues = true;
                 sqsBridgeTransport.HasEndpoint(sqsBridgeEndpoint);
                 bridgeConfiguration.AddTransport(sqsBridgeTransport);
