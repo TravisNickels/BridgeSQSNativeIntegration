@@ -16,6 +16,11 @@ public class SomeNativeMessageHandler : IHandleMessages<SomeNativeMessage>
 
         log.Info($"Received {nameof(SomeNativeMessage)} with message {eventMessage.ThisIsTheMessage}.");
 
+        var sendOptions = new SendOptions();
+        sendOptions.SetDestination("Samples.Transport.Bridge.MsmqEndpoint");
+
+        await context.Send(new SomeNativeMessage(), sendOptions).ConfigureAwait(false);
+
         if (nativeAttributeFound)
         {
             log.Info($"Found attribute 'SomeRandomKey' with value '{randomAttributeKey.StringValue}'");
