@@ -16,7 +16,7 @@ class Program
             .UseNServiceBusBridge((ctx, bridgeConfiguration) =>
             {
                 var sqsBridgeEndpoint = new BridgeEndpoint("Samples.Sqs.SimpleReceiver");
-                var sqsBridgeTransport = new BridgeTransport(new SqsTransport(CreateSqsClient(), CreateSnsClient()));
+                var sqsBridgeTransport = new BridgeTransport(new SqsTransport());
                 sqsBridgeTransport.AutoCreateQueues = true;
                 sqsBridgeTransport.HasEndpoint(sqsBridgeEndpoint);
                 bridgeConfiguration.AddTransport(sqsBridgeTransport);

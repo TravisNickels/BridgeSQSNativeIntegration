@@ -1,6 +1,6 @@
 ﻿using NServiceBus;
 
-namespace NativeIntegration.MsmqEndpoint
+namespace NativeIntegration.Receiver
 {
     public class SomeNativeMessage : IMessage
     {

@@ -4,7 +4,6 @@ using NativeIntegration.Receiver;
 using NServiceBus;
 using NServiceBus.Logging;
 
-#region HandlerAccessingNativeMessage
 public class SomeNativeMessageHandler : IHandleMessages<SomeNativeMessage>
 {
     static ILog log = LogManager.GetLogger<SomeNativeMessageHandler>();
@@ -15,11 +14,6 @@ public class SomeNativeMessageHandler : IHandleMessages<SomeNativeMessage>
         var nativeAttributeFound = nativeMessage.MessageAttributes.TryGetValue("SomeRandomKey", out var randomAttributeKey);
 
         log.Info($"Received {nameof(SomeNativeMessage)} with message {eventMessage.ThisIsTheMessage}.");
-
-        var sendOptions = new SendOptions();
-        sendOptions.SetDestination("Samples.Transport.Bridge.MsmqEndpoint");
-
-        await context.Send(new SomeNativeMessage(), sendOptions).ConfigureAwait(false);
 
         if (nativeAttributeFound)
         {
@@ -32,6 +26,10 @@ public class SomeNativeMessageHandler : IHandleMessages<SomeNativeMessage>
 
             await context.Reply(new SomeReply());
         }
+
+        var sendOptions = new SendOptions();
+        sendOptions.SetDestination("Samples.Transport.Bridge.MsmqEndpoint");
+
+        await context.Send(new SomeNativeMessage { ThisIsTheMessage = "My message" }, sendOptions).ConfigureAwait(false);
     }
 }
-#endregion
