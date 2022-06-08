@@ -6,9 +6,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sender", "Sender\Sender.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Receiver", "Receiver\Receiver.csproj", "{22B1E205-B713-45C3-A041-62CCDDA9646B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsmqEndpoint", "MsmqEndpoint\MsmqEndpoint.csproj", "{966F08F5-F075-4C7F-87B4-D60784297B20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MsmqEndpoint", "MsmqEndpoint\MsmqEndpoint.csproj", "{966F08F5-F075-4C7F-87B4-D60784297B20}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bridge", "Bridge\Bridge.csproj", "{9581BDE2-6EAF-4F3A-B838-CA1A668E49D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bridge", "Bridge\Bridge.csproj", "{9581BDE2-6EAF-4F3A-B838-CA1A668E49D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{EF440018-AF15-4DFE-9B54-5632332FE47E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +34,10 @@ Global
 		{9581BDE2-6EAF-4F3A-B838-CA1A668E49D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9581BDE2-6EAF-4F3A-B838-CA1A668E49D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9581BDE2-6EAF-4F3A-B838-CA1A668E49D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF440018-AF15-4DFE-9B54-5632332FE47E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF440018-AF15-4DFE-9B54-5632332FE47E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF440018-AF15-4DFE-9B54-5632332FE47E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF440018-AF15-4DFE-9B54-5632332FE47E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

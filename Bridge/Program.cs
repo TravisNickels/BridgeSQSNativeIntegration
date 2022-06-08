@@ -30,14 +30,4 @@ class Program
             .Build()
             .RunAsync().ConfigureAwait(false);
     }
-
-    public static IAmazonSQS CreateSqsClient()
-    {
-        return new AmazonSQSClient();
-    }
-
-    public static IAmazonSimpleNotificationService CreateSnsClient()
-    {
-        return new AmazonSimpleNotificationServiceClient();
-    }
 }

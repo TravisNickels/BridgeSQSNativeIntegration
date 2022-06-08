@@ -1,6 +1,5 @@
 ﻿using System.Threading.Tasks;
 using Amazon.SQS.Model;
-using NativeIntegration.Receiver;
 using NServiceBus;
 using NServiceBus.Logging;
 
@@ -30,6 +29,6 @@ public class SomeNativeMessageHandler : IHandleMessages<SomeNativeMessage>
         var sendOptions = new SendOptions();
         sendOptions.SetDestination("Samples.Transport.Bridge.MsmqEndpoint");
 
-        await context.Send(new SomeNativeMessage { ThisIsTheMessage = "My message" }, sendOptions).ConfigureAwait(false);
+        await context.Send(new SomeNativeMessage { ThisIsTheMessage = "A new message from the Samples.Sqs.SimpleReceiver endpoint" }, sendOptions).ConfigureAwait(false);
     }
 }
