@@ -26,7 +26,7 @@ class Program
                     #region SendingANativeMessage
                     await SendTo(new Dictionary<string, MessageAttributeValue>
                     {
-                        {"MessageTypeFullName", new MessageAttributeValue {DataType = "String", StringValue = "NativeIntegration.Receiver.SomeNativeMessage"}}, // required for native integration
+                        {"MessageTypeFullName", new MessageAttributeValue {DataType = "String", StringValue = "NativeIntegration.Shared.SomeNativeMessage"}}, // required for native integration
                         //{"S3BodyKey", new MessageAttributeValue {DataType = "String", StringValue = "s3bodykey"}}, // optional for native integration
                         {"SomeRandomKey", new MessageAttributeValue {DataType = "String", StringValue = "something-random"}},
                         {"AnotherRandomKey", new MessageAttributeValue {DataType = "String", StringValue = "something-else-thats-random"}},

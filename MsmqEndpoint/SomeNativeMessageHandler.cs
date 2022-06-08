@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using NativeIntegration.Shared;
 using NServiceBus;
 using NServiceBus.Logging;
 
