@@ -1,6 +1,10 @@
 ﻿using NServiceBus;
 
-public class SomeNativeMessage : IMessage
+namespace NativeIntegration.Shared
 {
-    public string ThisIsTheMessage { get; set; }
+    public class SomeNativeMessage : IMessage
+    {
+        public string ThisIsTheMessage { get; set; }
+    }
 }
+

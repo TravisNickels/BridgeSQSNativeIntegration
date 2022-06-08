@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Amazon.SQS.Model;
+using NativeIntegration.Shared;
 using NServiceBus;
 using NServiceBus.Logging;
 
